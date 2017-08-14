@@ -30,16 +30,13 @@
     <section id="main_content">
         {{ content }}
     </section>
-</div>
-
-<div>
     <section>
-        <% if page.previous != nil %>
+        {% if page.previous %}
         <a href="{{ page.previous.url }}">上一篇</a>
-        <% endif %>
-        <% if page.next != nil %>
+        {% endif %}
+        {% if page.next %}
         <a href="{{ page.next.url }}">下一篇</a>
-        <% endif %>
+        {% endif %}
     </section>
 </div>
 
