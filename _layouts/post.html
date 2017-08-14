@@ -34,10 +34,10 @@
 
 <div>
     <section>
-        <% if page.previous %>
+        <% if page.previous != nil %>
         <a href="{{ page.previous.url }}">上一篇</a>
         <% endif %>
-        <% if page.next %>
+        <% if page.next != nil %>
         <a href="{{ page.next.url }}">下一篇</a>
         <% endif %>
     </section>
