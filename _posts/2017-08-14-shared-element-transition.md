@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Shared Element Activity Transition"
 date:   2017-8-14 14:06:00 +0800
 ---
