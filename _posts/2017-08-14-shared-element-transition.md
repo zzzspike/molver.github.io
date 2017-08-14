@@ -1,4 +1,4 @@
 ---
-layout: post
-title: Shared Element Activity Transition
+layout: default
+title: "Shared Element Activity Transition"
 ---
