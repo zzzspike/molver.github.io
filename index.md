@@ -1,7 +1,5 @@
 ---
 layout: default
-paginator.perpage: 5
-paginator.page:0
 ---
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
