@@ -19,7 +19,7 @@ layout: default
   {% else %}
     <span class="previous">上一页</span>
   {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <span class="page_number "> {{ paginator.page }} / {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
   {% else %}
