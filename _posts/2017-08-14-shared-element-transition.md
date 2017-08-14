@@ -3,7 +3,7 @@ layout: post
 title: "Android共享元素变化实现总结"
 date:   2017-8-14 14:06:00 +0800
 ---
-![](/assets/images/share_element_demo.gif)
+![](/assets/images/share_element_demo.gif =250x)
 ## 概述
 传统的 acitivity 和 fragment 的进入和退出的过渡动画都是整个视图的，有诸如淡入淡出、滑入滑出等动画效果。
 但是很多情况下， Activities 之间有共有的元素，让这些共有的元素分别有个过渡动画，使人眼无缝切换，可以带来更好的用户体验。
