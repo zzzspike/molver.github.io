@@ -36,7 +36,6 @@ startActivity(intent, options.toBundle());
 在从第二个activity返回时，用 `supportFinishAfterTransition()` 代替 `finish()`
 ## 4.自定义共享元素变化
 <% highlight xml %>
-```
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- enable window content transitions -->
@@ -53,13 +52,13 @@ startActivity(intent, options.toBundle());
     <item name="android:windowSharedElementExitTransition">
       @transition/change_image_transform</item>
 </style>
-```
-```
+<% highlight %>
+
+<% highlight xml %>
 <!-- res/transition/change_image_transform.xml -->
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
   <changeImageTransform/>
 </transitionSet>
-```
 <% highlight %>
 ## 5.共享元素异步加载情况
 在 `onCreate` 中调用 `supportPostponeEnterTransition();` ，让transition暂停进行
