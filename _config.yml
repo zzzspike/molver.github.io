@@ -1,5 +1,7 @@
 title: 钢困的 blog
 description: 慢慢地，但永远向前～
 show_downloads: false
+host: zhengqk.com
+baseurl: ""
 google_analytics:
 theme: jekyll-theme-hacker
