@@ -3,13 +3,13 @@ layout: post
 title: "共享元素动画(Shared element activity transition)"
 date:   2017-8-14 14:06:00 +0800
 ---
-# 概述
+## 概述
 传统的 acitivity 和 fragment 的进入和退出的过渡动画都是整个视图的，有诸如淡入淡出、滑入滑出等动画效果。
 但是很多情况下， Activities 之间有共有的元素，让这些共有的元素分别有个过渡动画，使人眼无缝切换，可以带来更好的用户体验。
 下面让我们看下如何实现共享元素变化，并分享下个人在实现过程中遇到的问题。
-# 共享元素变化的实现
+## 共享元素变化的实现
 注意：该特性仅支持 Android 5.0以上系统，所以使用某些方法时需运行时检查系统版本，或使用兼容库里的方法
-## 1.启用窗口共享内容变化
+### 1.启用窗口共享内容变化
 styles.xml文件中启用：
 <!--more-->
 ```
@@ -22,11 +22,11 @@ styles.xml文件中启用：
 ```
 在代码中启用：    
 `window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)` 
-## 2.指定一个相同的Transition Name
+### 2.指定一个相同的Transition Name
 在布局文件中使用 `android:transitionName` 标签来给共享元素指定变化名称    
 或使用代码启用 `ViewCompat.setTransitionName(shareView, transitionName);`
 
-## 3.启动一个 Activity
+### 3.启动一个 Activity
 ```
 Intent intent = new Intent(this, DetailsActivity.class);
 ActivityOptionsCompat options = ActivityOptionsCompat.
@@ -34,7 +34,7 @@ ActivityOptionsCompat options = ActivityOptionsCompat.
 startActivity(intent, options.toBundle());
 ```
 在从第二个activity返回时，用 `supportFinishAfterTransition()` 代替 `finish()`
-## 4.自定义共享元素变化
+### 4.自定义共享元素变化
 ```
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -59,7 +59,7 @@ startActivity(intent, options.toBundle());
   <changeImageTransform/>
 </transitionSet>
 ```
-## 5.共享元素异步加载情况
+### 5.共享元素异步加载情况
 在 `onCreate` 中调用 `supportPostponeEnterTransition();` ，让transition暂停进行
 ```
 //使用Glide或Picasso加载图片后
@@ -75,11 +75,11 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
     }
 );
 ```
-## 6.RecyclerView  -> ViewPager 共享动画实现
-### transitionName 在整个控件树中应该是唯一的
+### 6.RecyclerView  -> ViewPager 共享动画实现
+#### transitionName 在整个控件树中应该是唯一的
 在 RecyclerViewAdapter和ViewPagerAdapter中，可用position或item的id拼装成transitionName保证其唯一   
 `ViewCompat.setTransitionName(shareView, "transitionName" + position)`
-### ViewPager中滑动到另外一个page时，共享元素如何更改为当前界面里的元素？
+#### ViewPager中滑动到另外一个page时，共享元素如何更改为当前界面里的元素？
 `RecyclerViewActivity` 应使用 `startActivityForResult()` 来启动 `ViewPagerActivity`    
 当 `ViewPager` 页面发生变化时，通过 `setEnterSharedElementCallback()` 方法来修改进入的共享元素，并将退出时的位置传递给 `RecyclerViewActivity` 
 ```
