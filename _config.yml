@@ -5,3 +5,4 @@ host: zhengqk.com
 baseurl: ""
 google_analytics:
 theme: jekyll-theme-hacker
+paginator: 5
