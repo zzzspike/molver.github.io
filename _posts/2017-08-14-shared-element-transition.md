@@ -79,10 +79,10 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
 );
 ```
 ### 6.RecyclerView  -> ViewPager 共享动画实现
-* transitionName 在整个控件树中应该是唯一的
+#### 1) transitionName 在整个控件树中应该是唯一的
 在 RecyclerViewAdapter和ViewPagerAdapter中，可用position或item的id拼装成transitionName保证其唯一   
 `ViewCompat.setTransitionName(shareView, "transitionName" + position)`
-* ViewPager中滑动到另外一个page时，共享元素如何更改为当前界面里的元素？
+#### 2) ViewPager中滑动到另外一个page时，共享元素如何更改为当前界面里的元素？
 `RecyclerViewActivity` 应使用 `startActivityForResult()` 来启动 `ViewPagerActivity`    
 当 `ViewPager` 页面发生变化时，通过 `setEnterSharedElementCallback()` 方法来修改进入的共享元素，并将退出时的位置传递给 `RecyclerViewActivity` 
 ```java
