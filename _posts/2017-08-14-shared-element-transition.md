@@ -7,11 +7,11 @@ date:   2017-8-14 14:06:00 +0800
 传统的 acitivity 和 fragment 的进入和退出的过渡动画都是整个视图的，有诸如淡入淡出、滑入滑出等动画效果。
 但是很多情况下， Activities 之间有共有的元素，让这些共有的元素分别有个过渡动画，使人眼无缝切换，可以带来更好的用户体验。
 下面让我们看下如何实现共享元素变化，并分享下个人在实现过程中遇到的问题。
-<!--more-->
 # 共享元素变化的实现
 注意：该特性仅支持 Android 5.0以上系统，所以使用某些方法时需运行时检查系统版本，或使用兼容库里的方法
 ## 1.启用窗口共享内容变化
 styles.xml文件中启用：
+<!--more-->
 ```
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -35,6 +35,7 @@ startActivity(intent, options.toBundle());
 ```
 在从第二个activity返回时，用 `supportFinishAfterTransition()` 代替 `finish()`
 ## 4.自定义共享元素变化
+<% highlight xml %>
 ```
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -59,6 +60,7 @@ startActivity(intent, options.toBundle());
   <changeImageTransform/>
 </transitionSet>
 ```
+<% highlight %>
 ## 5.共享元素异步加载情况
 在 `onCreate` 中调用 `supportPostponeEnterTransition();` ，让transition暂停进行
 ```
