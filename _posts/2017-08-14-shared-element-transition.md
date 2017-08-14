@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Shared Element Activity Transition"
+title: "共享元素动画(Shared element activity transition)"
 date:   2017-8-14 14:06:00 +0800
 ---
 # 概述
