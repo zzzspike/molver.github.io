@@ -6,13 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Ashwathama
-description: > # this means to ignore newlines until "baseurl:"
- Ashwathama is a minimal website with an app like design. It also features card layouts for website elements.
-baseurl: "/ashwath" # the subpath of your site, e.g. /blog
-url: "http://webjeda.com"
+title: 钢困的博客
+description: 慢慢地，但永远向前～
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "zhengqk.com"
 permalink: :title/
-full-url: "http://ashwathama.s3-website-us-east-1.amazonaws.com/" # the base hostname & protocol for your site
+full-url: "http://zhengqk.com/" # the base hostname & protocol for your site
 
 
 # CSS
@@ -48,12 +47,12 @@ markdown: kramdown
 include: [_pages] # Includes files inside _pages directory [Do not remove this]
 
 author:
-  name: Ashwathama
+  name: 钢困
   image: ashwat.jpg # The author image will be shown on the header. Place this image in /images/ folder.
-  about: Ashwathama is a sage who wrote Mahabharatha. He is the son of Drona. He fought on the Kaurava side against the Pandavas. He put up a pretty good fight with mighty Bhima.
-  twitter: webjeda  # https://twitter.com/ is automatically added
-  facebook: webjeda # https://facebook.com/ is automatically added
-  email: hello@webjeda.com # mailto: is automatically added
+  about: 想入非非的倯人
+  twitter: zqk  # https://twitter.com/ is automatically added
+  facebook: zqk # https://facebook.com/ is automatically added
+  email: molver16@gmail.com # mailto: is automatically added
   
 gems: 
   - jekyll-seo-tag
