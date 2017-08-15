@@ -175,5 +175,4 @@ Glide.with(context)
         .dontAnimate()
         .into(imageView)
 {% endhighlight %}
-
-* 
+ 
