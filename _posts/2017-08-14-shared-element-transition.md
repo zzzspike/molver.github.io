@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "Android共享元素变化实现总结"
 date:   2017-8-14 14:06:00 +0800
+tags: android
 ---
 ![](/assets/images/share_element_transition.gif)
 ## 概述

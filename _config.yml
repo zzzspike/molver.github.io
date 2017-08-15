@@ -7,4 +7,11 @@ google_analytics:
 theme: jekyll-theme-hacker
 paginate: 5
 excerpt_separator: <!--more-->
-highligter: rouge
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "钢困"
