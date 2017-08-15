@@ -29,7 +29,7 @@ styles.xml文件中启用：
 window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
 {% endhighlight %}
 
-### 指定一个相同的Transition Name
+### 指定一个相同的 Transition Name
 在布局文件中使用 `android:transitionName` 标签来给共享元素指定变化名称    
 或在运行时指定 `ViewCompat.setTransitionName(shareView, transitionName);`
 
