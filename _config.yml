@@ -16,7 +16,7 @@ date_format: '%Y-%m-%d'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url: http://zhengqk.com
 baseurl: ""
-permalink: pretty
+permalink: /:title
 
 # Pagination
 paginate: 10
@@ -389,7 +389,7 @@ disqus:
   hide: false
 
 # Hypercomments
-#hypercomments_id:
+hypercomments_id: 94482
 
 # Gentie productKey
 #gentie_productKey:
@@ -402,11 +402,11 @@ changyan:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-youyan_uid: 1956951
+# youyan_uid: 1956951
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+# livere_uid: your uid
 
 # Baidu Share
 # Available value:
@@ -482,16 +482,16 @@ vkontakte_api:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     #<app_id>
+  id:     6663
   color:  fc6423
 
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: sW8tlncJVmjij7wVm0KQBCrx-gzGzoHsz
+  app_key: xy9hlhk2ThnX6TAFNbLn7yOS
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
