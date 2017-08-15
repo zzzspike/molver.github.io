@@ -384,7 +384,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: zhengqk
   count: true
   # hide comments (visitors need to click to load the comments)
@@ -405,7 +405,7 @@ changyan:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
+youyan_uid: 1956951
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -421,7 +421,7 @@ changyan:
 # Share
 #jiathis:
 # Warning: JiaThis does not support https.
-#add_this_id:
+add_this_id: 1406197837113121
 
 # Share
 #duoshuo_share: true
