@@ -1,6 +1,4 @@
 _site
 .sass-cache
-Gemfile.lock
-*.gem
-.travis.yml
+.jekyll-metadata
 .idea
