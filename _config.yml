@@ -167,7 +167,7 @@ font:
   enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host:
+  host: //fonts.lug.ustc.edu.cn
 
   # Global font settings used on <body> element.
   global:
@@ -227,8 +227,6 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  Twitter: twitter
-  Weibo: weibo
   Google+: google-plus
   Email: envelope
 
@@ -376,7 +374,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics:2f6d74bdceea9848d9360277a128b5c
 
 # Duoshuo ShortName
 #duoshuo_shortname:
