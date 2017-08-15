@@ -1,10 +1,8 @@
 ---
 title: "Android共享元素变化实现总结"
 date:   2017-8-14 14:06:00 +0800
-categories:
-   -code
-tags: 
-   -android
+categories: code
+tags: android
 ---
 
 ## 概述
