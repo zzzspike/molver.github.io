@@ -374,7 +374,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics:2f6d74bdceea9848d9360277a128b5c
+baidu_analytics: 2f6d74bdceea9848d9360277a128b5c
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -416,7 +416,7 @@ youyan_uid: 1956951
 ##  type: button
 
 # Share
-#jiathis:
+jiathis: true
 # Warning: JiaThis does not support https.
 add_this_id: 1406197837113121
 
