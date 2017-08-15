@@ -54,6 +54,3 @@ author:
   facebook: zqk # https://facebook.com/ is automatically added
   email: molver16@gmail.com # mailto: is automatically added
   
-gems: 
-  - jekyll-seo-tag
-  - jekyll-paginate
