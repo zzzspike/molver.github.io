@@ -1,6 +1,8 @@
 ---
 title: "Android共享元素变化实现总结"
 date:   2017-8-14 14:06:00 +0800
+categories:
+   -code
 tags: 
    -android
 ---
@@ -15,7 +17,7 @@ tags:
 
 ### 启用窗口共享内容变化
 styles.xml文件中启用：
-<!--more-->
+<!-- more -->
 {% highlight xml %}
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
