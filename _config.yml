@@ -300,6 +300,8 @@ save_scroll: false
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
+excerpt_separator: <!--more-->
+
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:

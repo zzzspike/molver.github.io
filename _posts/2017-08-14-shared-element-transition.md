@@ -15,7 +15,7 @@ tags:
 
 ### 启用窗口共享内容变化
 styles.xml文件中启用：
-<!-- more -->
+<!--more-->
 {% highlight xml %}
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
