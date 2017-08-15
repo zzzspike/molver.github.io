@@ -6,6 +6,7 @@ baseurl: ""
 google_analytics:
 theme: jekyll-theme-hacker
 paginate: 5
+highlighter: rouge
 excerpt_separator: <!--more-->
 defaults:
   -
