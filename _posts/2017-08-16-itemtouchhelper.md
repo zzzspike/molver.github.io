@@ -8,7 +8,7 @@ tags: android
 ## 前言
 
 有很多教程或第三方库可以实现 RecyclerView 的滑动删除和长按拖放功能，可能利用了 `GestureDetector` 或 `View.OnDragListener` 去实现。
-但其实要实现这个功能只需要一个类，且已经在 Android Support Library 中了-- 那就是 [`ItemTouchHelper`](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html)
+但其实要实现这个功能只需要一个类，且已经在 Android Support Library 中了 -- 那就是 [`ItemTouchHelper`](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html)。
 <!--more-->
 [](){: #more }
 
@@ -108,12 +108,13 @@ public class MyRecyclerViewAdapter {
 }
 {% endhighlight %}
 ### 实例化 ItemTouchHelper
-`Callback` 搞定，我们就可以实例化 `ItemTouchHelper` 并调用 `attachToRecyclerView(RecyclerView rv) 关联相应的 `RecyclerView`
+`Callback` 搞定，我们就可以实例化 `ItemTouchHelper` 并调用 `attachToRecyclerView(RecyclerView rv)` 关联相应的 `RecyclerView`
 {% highlight java %}
 MyItemTouchHelperCallback callback = new MyItemTouchHelperCallback(adapter);
 ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
 touchHelper.attachToRecyclerView(recyclerView);
 {% endhighlight %}
+Done!
 
 ### 其他一些细节
 * ItemTouchHelper 的 startDrag(RecyclerView.ViewHolder viewHolder) 方法，用来手动启动拖放，可以实现触摸拖放手柄View直接开始拖放
@@ -121,6 +122,8 @@ touchHelper.attachToRecyclerView(recyclerView);
 这里可以处理一些细节，例如进入拖放或滑动模式时，修改View背景图为绿色。
 
 ## 效果图及Demo地址
-![](/assets/images/itemtouchhelper1.gif)![](/assets/images/itemtouchhelper2.gif)
+<img style="float:left; margin-right: 16px;" src="/assets/images/itemtouchhelper1.gif" width="270"/>
+<img style="float:left;" src="/assets/images/itemtouchhelper2.gif" width="270"/>
+<div style="clear:both;"></div>
 [Demo地址](https://github.com/molver/ItemTouchHelperDemo)
 
