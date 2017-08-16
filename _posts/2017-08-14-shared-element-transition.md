@@ -6,7 +6,7 @@ tags: android
 ---
 
 ## 概述
-传统的 activity 和 fragment 的进入和退出的过渡变化都是整个视图的，有诸如淡入淡出、滑入滑出等动画效果。但是很多情况下， Activities 之间有共有的元素，让这些共有的元素分别有个过渡动画，使人眼无缝切换，可以带来更好的用户体验。下面让我们看下如何实现共享元素变化，并分享下个人在实现过程中遇到的一些问题。以下为我实现效果图:   
+传统的 activity 和 fragment 的进入和退出的过渡变化都是整个视图的，有诸如淡入淡出、滑入滑出等变换效果。但是很多情况下， Activities 之间有共有的元素，让这些共有的元素分别有个过渡变化，使人眼无缝切换，可以带来更好的用户体验。下面让我们看下如何实现共享元素变化，并分享下个人在实现过程中遇到的一些问题。以下为我实现效果图:   
 <!--more-->
 [](){: #more}
 ![效果图](/assets/images/shared_element_transition.gif)
@@ -96,11 +96,11 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
 );
 {% endhighlight %}
 
-### RecyclerView  -> ViewPager 共享动画实现
+### RecyclerView  -> ViewPager 共享变化的实现
 #### transitionName 在整个控件树中应该是唯一的
 在 RecyclerViewAdapter和ViewPagerAdapter中，可用position或item的id拼装成transitionName保证其唯一   
 `ViewCompat.setTransitionName(shareView, "transitionName" + position)`
-#### ViewPager中滑动到另外一个page时，共享元素如何更改为当前界面里的元素？
+#### ViewPager中滑动到另外一个page时，共享元素如何动态更换？
 `RecyclerViewActivity` 应使用 `startActivityForResult()` 来启动 `ViewPagerActivity`    
 当 `ViewPager` 页面发生变化时，通过 `setEnterSharedElementCallback()` 方法来修改进入的共享元素，并将退出时的位置传递给 `RecyclerViewActivity` 
 {% highlight kotlin %}
@@ -127,7 +127,7 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
     }
 
 {% endhighlight %}
-`RecyclerViewActivity` 在开始共享元素变化前会调用 `onActivityReenter();` 回调，在这里暂停transition，拿到传递传递过来的 `exitPosition` ，更新共享元素后再开始动画。
+`RecyclerViewActivity` 在开始共享元素变化前会进行 `onActivityReenter();` 回调，在这里暂停 transition，拿到传递传递过来的 `exitPosition` ，更新共享元素后再开始 transition。
 {% highlight kotlin %}
     override fun onActivityReenter(resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && data != null) {
