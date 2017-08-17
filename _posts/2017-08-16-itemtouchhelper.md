@@ -6,7 +6,6 @@ tags: android
 ---
 
 ## 前言
-
 有很多教程或第三方库可以实现 RecyclerView 的滑动删除和长按拖放功能，可能利用了 `GestureDetector` 或 `View.OnDragListener` 去实现。
 但其实要实现这个功能只需要一个类，且已经在 Android Support Library 中了 -- 那就是 [`ItemTouchHelper`](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html)。
 <!--more-->
