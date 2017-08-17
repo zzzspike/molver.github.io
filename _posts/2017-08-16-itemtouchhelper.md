@@ -13,7 +13,7 @@ tags: android
 
 ## 设置
 在 build.gradle 中添加:
-~~~ groovy
+~~~groovy
 compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
 ~~~
 
@@ -22,7 +22,7 @@ compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
 
 ### 实现 ItemTouchHelper.Callback
 要实现拖放和滑动删除功能，主要需实现以下几个回调
-~~~ java
+~~~java
 public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) //控制滑动删除和拖放的方向
 public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) //拖放后回调
 public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) //滑动完成后回调
@@ -31,7 +31,7 @@ public boolean isItemViewSwipeEnabled() //控制是否启用滑动删除
 ~~~
 下面我们来一一实现<br>
 `getMovementFlags(RecyclerView, ViewHolder)`方法主要用来设置上下左右各方向是用来拖动还是滑动，用 `ItemTouchHelper.makeMovementFlag(int, int)`要构建返回的设置。下面设置了在线性布局时，上下方向为拖放，左右方向为滑动，在网络布局时，则上下左右方向均为拖放。
-~~~ java
+~~~java
 public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
     RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
     int dragFlag = 0;
@@ -48,14 +48,14 @@ public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder v
 ~~~
 `isLongPressDragEnabled()` 返回 true 启用长按拖放，或直接调用 `ItemTouchHelper.startDrag(RecyclerView.ViewHolder viewHolder)` 手动开始拖放<br>
 `onMove` 和 `onSwiped` 需要用来通知 Adapter 拖放或滑动结束了，进行对数据更新。我们先创建一个接口 ItemTouchHelperAdapter 作为监听器用来传递通知给 Adapter
-~~~ java
+~~~java
 public interface ItemTouchHelperAdapter {
     void onItemDismiss(int position);
     void onItemMove(int fromPosition, int toPosition);
 }
 ~~~
 将监听器在构造函数中初始化
-~~~ java
+~~~java
 public class MyItemTouchHelperCallback {
 
     private final ItemTouchHelperAdapter adapter;
@@ -78,7 +78,7 @@ public class MyItemTouchHelperCallback {
 }
 ~~~
 `MyRecyclerViewAdapter` 实现这个接口，接收到条目位置变化或被移除的回调后更新数据
-~~~ java
+~~~java
 @Override
 public class MyRecyclerViewAdapter {
 
@@ -108,7 +108,7 @@ public class MyRecyclerViewAdapter {
 ~~~
 ### 实例化 ItemTouchHelper
 `Callback` 搞定，我们就可以实例化 `ItemTouchHelper` 并调用 `attachToRecyclerView(RecyclerView rv)` 关联相应的 `RecyclerView`
-~~~ java
+~~~java
 MyItemTouchHelperCallback callback = new MyItemTouchHelperCallback(adapter);
 ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
 touchHelper.attachToRecyclerView(recyclerView);
