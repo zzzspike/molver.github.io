@@ -18,33 +18,33 @@ tags: android
 
 ### 启用窗口共享内容变化
 `styles.xml` 文件中启用：
-``` xml
+~~~ xml
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- Customize your theme here. -->
     <item name="android:windowContentTransitions">true</item>
     ...
 </style>
-```
+~~~
 在代码中运行时启用：
-``` java
+~~~ java
 window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
-```
+~~~
 
 ### 指定一个相同的 Transition Name
 在布局文件中使用 `android:transitionName` 标签来给共享元素指定变化名称    
 或在运行时指定 `ViewCompat.setTransitionName(shareView, transitionName);`
 
 ### 启动 Activity
-``` java
+~~~ java
 Intent intent = new Intent(this, DetailsActivity.class);
 ActivityOptionsCompat options = ActivityOptionsCompat.
     makeSceneTransitionAnimation(this, shareView, ViewCompat.getTransitionName(shareView);
 startActivity(intent, options.toBundle());
-```
+~~~
 在从第二个activity返回时，用 `supportFinishAfterTransition()` 代替 `finish()`
 #### 多个共享元素的情况：
-``` java
+~~~ java
 Intent intent = new Intent(context, SecondActivity.class);
 Pair<View, String> p1 = Pair.create(shareView1, "transitionName1");
 Pair<View, String> p2 = Pair.create(shareView2, "transitionName2");
@@ -52,11 +52,11 @@ Pair<View, String> p3 = Pair.create(shareView3, "transitionName3");
 ActivityOptionsCompat options = ActivityOptionsCompat.
  makeSceneTransitionAnimation(this, p1, p2, p3);
 startActivity(intent, options.toBundle());
-```
+~~~
 
 ### 自定义共享元素变化
  共享元素变化方式默认是 ChangeBounds, ChangeTransform, ChangeImageTransform 和 ChangeClipBounds 的组合，通常运作完美，但也可以通过以下方式进行自定义
- ``` xml
+``` xml
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- enable window content transitions -->
