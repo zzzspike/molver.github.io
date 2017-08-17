@@ -44,7 +44,7 @@ startActivity(intent, options.toBundle());
 ```
 在从第二个activity返回时，用 `supportFinishAfterTransition()` 代替 `finish()`
 #### 多个共享元素的情况：
-```java
+``` java
 Intent intent = new Intent(context, SecondActivity.class);
 Pair<View, String> p1 = Pair.create(shareView1, "transitionName1");
 Pair<View, String> p2 = Pair.create(shareView2, "transitionName2");
