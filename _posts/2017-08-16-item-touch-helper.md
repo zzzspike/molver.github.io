@@ -1,7 +1,7 @@
 ---
 title: "使用 ItemTouchHelper 实现 RecyclerView 滑动删除和长按拖放"
 date:   2017-8-16 16:06:00 +0800
-categories: 编程
+categories: 编程人生
 tags: android
 ---
 

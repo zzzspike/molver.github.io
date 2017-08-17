@@ -1,7 +1,7 @@
 ---
 title: "Android 共享元素变化实现总结"
 date:   2017-8-14 14:06:00 +0800
-categories: 编程
+categories: 编程人生
 tags: android
 ---
 
