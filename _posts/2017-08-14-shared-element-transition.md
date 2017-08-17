@@ -56,7 +56,7 @@ startActivity(intent, options.toBundle());
 
 ### 自定义共享元素变化
  共享元素变化方式默认是 ChangeBounds, ChangeTransform, ChangeImageTransform 和 ChangeClipBounds 的组合，通常运作完美，但也可以通过以下方式进行自定义
-``` xml
+~~~ xml
 <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- enable window content transitions -->
@@ -73,17 +73,17 @@ startActivity(intent, options.toBundle());
     <item name="android:windowSharedElementExitTransition">
       @transition/change_image_transform</item>
 </style>
-```
-``` xml
+~~~
+~~~ xml
 <!-- res/transition/change_image_transform.xml -->
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
   <changeImageTransform/>
 </transitionSet>
-```
+~~~
 
 ### 共享元素异步加载情况
 在 `onCreate` 中调用 `supportPostponeEnterTransition();` ，让transition暂停进行
-``` java
+~~~ java
 //使用Glide或Picasso加载图片后
 imageView.getViewTreeObserver().addOnPreDrawListener(
     new ViewTreeObserver.OnPreDrawListener() {
@@ -96,7 +96,7 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
         }
     }
 );
-```
+~~~
 
 ### RecyclerView  -> ViewPager 共享变化的实现
 #### transitionName 在整个控件树中应该是唯一的
@@ -105,7 +105,7 @@ imageView.getViewTreeObserver().addOnPreDrawListener(
 #### ViewPager中滑动到另外一个page时，共享元素如何动态更换？
 `RecyclerViewActivity` 应使用 `startActivityForResult()` 来启动 `ViewPagerActivity`    
 当 `ViewPager` 页面发生变化时，通过 `setEnterSharedElementCallback()` 方法来修改进入的共享元素，并将退出时的位置传递给 `RecyclerViewActivity`
-``` kotlin
+~~~ kotlin
 override fun onBackPressed() {
     val intent = Intent()
     intent.putExtra("exit_pos", currentPage)
@@ -127,9 +127,9 @@ fun setEnterSharedElementCallback(sharedView: View) {
         }
     })
 }
-```
+~~~
 `RecyclerViewActivity` 在开始共享元素变化前会进行 `onActivityReenter();` 回调，在这里暂停 transition，拿到传递传递过来的 `exitPosition` ，更新共享元素后再开始 transition。
-``` kotlin
+~~~ kotlin
 override fun onActivityReenter(resultCode: Int, data: Intent?) {
     if (resultCode == Activity.RESULT_OK && data != null) {
         supportPostponeEnterTransition()
@@ -166,15 +166,15 @@ fun setCallback(newShareView: View) {
         }
     })
 }
-```
+~~~
 
 ### 其他注意事项
 * 当共享元素为图片，且采用 Glide 或 Picasso 加载图片时需禁用加载动画，如 Glide 需调用 `dontAnimate()`：
 
-``` java
+~~~ java
 Glide.with(context)
         .load(url)
         .dontAnimate()
         .into(imageView)
-```
+~~~
 
