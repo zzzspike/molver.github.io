@@ -19,8 +19,8 @@ baseurl: ""
 permalink: /:title
 
 # Pagination
-paginate: 10
-#paginate_path: "/page:num/"
+paginate: 5
+paginate_path: "/page/:num/"
 #archive:
   #paginate: 10
   #paginate_path: "/page:num/"
@@ -78,7 +78,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: Android,Develop,Running,跑步
+keywords: Android,Develop,Running,跑步,Linux
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -107,7 +107,6 @@ canonical: true
 seo: true
 
 # If true, will add site-subtitle to index page, added in jekyll config.
-# subtitle: Subtitle
 index_with_subtitle: true
 
 # ---------------------------------------------------------------
@@ -121,7 +120,7 @@ menu:
   archives: /archives/
   tags: /tags/
 #  sitemap: /sitemap.xml
-  about: /about/
+#  about: /about/
 #  commonweal: /404.html
 
 
@@ -214,7 +213,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   Github: https://github.com/molver
-  Google: https://plus.google.com/105808957277808959016
+  Google+: https://plus.google.com/105808957277808959016
   Email: mailto:molver16@gmail.com
 
 # Social Links Icons
@@ -227,7 +226,7 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  GooglePlus: google-plus
+  Google+: google-plus
   Email: envelope
 
 
@@ -257,7 +256,6 @@ toc:
 sidebar:
   # Sidebar Position, available value: left | right
   position: left
-  #position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -274,7 +272,7 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
   scrollpercent: false
@@ -412,13 +410,13 @@ changyan:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+baidushare:
+  type: button
 
 # Share
-jiathis: true
+#jiathis: true
 # Warning: JiaThis does not support https.
-add_this_id: 1406197837113121
+#add_this_id: 1406197837113121
 
 # Share
 #duoshuo_share: true
@@ -445,7 +443,7 @@ add_this_id: 1406197837113121
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
-  ua_enable: true
+  ua_enable: false
   admin_enable: false
   user_id: 0
   #admin_nickname: Author
@@ -481,7 +479,7 @@ vkontakte_api:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: true
+  enable: false
   id:     6663
   color:  fc6423
 
@@ -520,7 +518,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -577,7 +575,7 @@ use_motion: true
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce

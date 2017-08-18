@@ -121,8 +121,9 @@ Done!
 这里可以处理一些细节，例如进入拖放或滑动模式时，修改View背景图为绿色。
 
 ## 效果图及Demo地址
-<img style="float:left; margin-right: 16px;" src="/assets/images/itemtouchhelper1.gif" width="270"/>
-<img style="float:left;" src="/assets/images/itemtouchhelper2.gif" width="270"/>
-<div style="clear:both;"></div>
+![](/assets/images/itemtouchhelper1.gif)
+![](/assets/images/itemtouchhelper2.gif)
+{: .center }
+<br>
 [Demo地址](https://github.com/molver/ItemTouchHelperDemo)
 
