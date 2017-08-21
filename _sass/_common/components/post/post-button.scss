@@ -8,11 +8,9 @@
     border-radius: $read-more-border-radius;
     line-height: 2;
     margin: 0 4px 8px 4px;
-    &:hover {
-      border-color: $btn-default-hover-border-color;
-      color: $btn-default-hover-color;
-      background: $btn-default-hover-bg;
-    }
+  }
+  .btn:hover {
+    @extend %btn-hover;
   }
   .fa-fw {
     width: (18em / 14);
